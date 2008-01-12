@@ -12,22 +12,32 @@ Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+.
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
 
+Installation:
+
+1.  Download the file http://www.coffee2code.com/wp-plugins/safe-function-call.zip and unzip it into your 
+/wp-content/plugins/ directory.
+-OR-
+Create the directory '/wp-content/plugins/safe-function-call/' and copy and paste the code ( http://www.coffee2code.com/wp-plugins/safe-function-call/safe-function-call.phps ) into a file called 
+safe-function-call.php in that directory.
+2. Activate the plugin through the 'Plugins' admin menu in WordPress
+3. Use either of the two functions (_sfc() or _sfcm()) provided by this plugin as often as desired
+
 Usage:
 	Assuming you had something like this in a template:
 	
-	<?php list_cities('Texas', 5); ?>
+	<?php list_cities('Texas', 3); ?>
 	
 	If you deactivated the plugin that provided list_cities(), your site would generate an error when that template is accessed.
 	
 	You can instead use _sfc(), which is provided by this plugin to call other functions, like so:
 	
-	<?php _sfc('list_cities', 'Texas', 5); ?>
+	<?php _sfc('list_cities', 'Texas', 3); ?>
 	
 	That will simply do nothing if the list_cities() function is not available.
 
 	If you'd rather display a message when the function does not exist, use _sfcm() instead, like so:
 	
-	<?php _sfcm('list_cities', 'The cities listing is temporarily disabled.', 'Texas', 5); ?>
+	<?php _sfcm('list_cities', 'The cities listing is temporarily disabled.', 'Texas', 3); ?>
 	
 	In this case, if list_cities() is not available, the text "The cities listing is temporarily disabled." will be displayed.
 
