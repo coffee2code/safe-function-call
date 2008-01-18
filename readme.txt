@@ -1,7 +1,7 @@
 === Safe Function Call ===
 Contributors: coffee2code
 Donate link: http://coffee2code.com
-Tags: function
+Tags: function, template, plugin, error
 Requires at least: 1.5
 Tested up to: 2.3.2
 Stable tag: trunk
