@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Safe Function Call
-Version: 0.9.5
+Version: 0.9.6
 Plugin URI: http://www.coffee2code.com/wp-plugins/
 Author: Scott Reilly
 Author URI: http://www.coffee2code.com
@@ -20,7 +20,7 @@ Installation:
 Create the directory '/wp-content/plugins/safe-function-call/' and copy and paste the code ( http://www.coffee2code.com/wp-plugins/safe-function-call/safe-function-call.phps ) into a file called 
 safe-function-call.php in that directory.
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
-3. Use either of the two functions (_sfc() or _sfcm()) provided by this plugin as often as desired
+3. Use any of the three functions (_sfc(), _sfce(), or _sfcm()) provided by this plugin as desired
 
 Usage:
 	Assuming you had something like this in a template:
@@ -41,6 +41,14 @@ Usage:
 	
 	In this case, if list_cities() is not available, the text "The cities listing is temporarily disabled." will be displayed.
 
+	In the event you want to safely call a function and echo its value, you can use _sfce() like so:
+	
+	<?php _sfce('largest_city', 'Tx'); ?>
+	
+	Which is the equivalent of doing :
+	
+	<?php if function_exists('largest_city') { $value = largest_city('Tx'); echo $value; return $value; } ?>
+	
 */
 
 /*
@@ -65,6 +73,16 @@ function _sfc( $function_name ) {
 	if (!function_exists($function_name)) return;
 	$args = array_slice(func_get_args(), 1);
 	return call_user_func_array($function_name, $args);	
+}
+
+/* The same as _sfc() except that it echoes the return value of $function_name() before returning that value */
+function _sfce( $function_name ) {
+	if (!function_exists($function_name)) return;
+	$args = func_get_args();
+	$value = call_user_func_array('_sfc', $args);
+	if ($value)
+		echo $value;
+	return $value;
 }
 
 /* The same as _sfc() except that it displays a message (the value of $message_if_missing) if $function_name() does not exist. */

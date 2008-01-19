@@ -5,7 +5,7 @@ Tags: function, template, plugin, error
 Requires at least: 1.5
 Tested up to: 2.3.2
 Stable tag: trunk
-Version: 0.9.5
+Version: 0.9.6
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -31,11 +31,19 @@ If you'd rather display a message when the function does not exist, use `_sfcm()
 
 In this case, if `list_cities()` is not available, the text "The cities listing is temporarily disabled." will be displayed.
 
+In the event you want to safely call a function and echo its value, you can use `_sfce()` like so:
+
+`<?php _sfce('largest_city', 'Tx'); ?>`
+
+Which is the equivalent of doing :
+
+`<?php if function_exists('largest_city') { $value = largest_city('Tx'); echo $value; return $value; } ?>`
+
 == Installation ==
 
 1. Unzip `safe-function-call.zip` inside the `/wp-content/plugins/` directory, or upload `safe-function-call.php` into `/wp-content/plugins/`
 1. Activate the plugin through the 'Plugins' admin menu in WordPress
-1. Use either of the two functions provided by this plugin as often as desired
+1. Use any of the three functions provided by this plugin as desired
 
 == Template Tags ==
 
@@ -45,6 +53,9 @@ The plugin provides two functions for your use. *Note: These functions are not l
 
 * `<?php function _sfc($function_name) ?>`
 This will safely invoke the function by the name of `$function_name`.  You can specify an arbitrary number of additional arguments that will get passed to `$function_name()`.  If `$function_name()` does not exist, nothing is displayed and no error is generated.
+
+* `<?php function _sfce($function_name) ?>`
+The same as `_sfc()` except that it echoes the return value of `$function_name()` before returning that value.
 
 * `<?php function _sfcm($function_name, $message_if_missing = '') ?>`
 The same as `_sfc()` except that it displays a message (the value of `$message_if_missing`), if `$function_name()` does not exist.
@@ -70,6 +81,9 @@ A string representing the name of the function to be called.
 
 * `<?php _sfcm('list_cities', 'Texas', 'Unable to list cities at the moment', 3); /* Assuming list_cities() is not a valid function */ ?>`
 "Unable to list cities at the moment"
+
+* `<?php _sfce('largest_city', 'Tx'); /* Assuming largest_city() is a valid function that does not echo/display its return value */ ?>`
+"Houston"
 
 == Frequently Asked Questions ==
 
