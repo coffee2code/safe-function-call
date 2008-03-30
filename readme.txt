@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com
 Tags: function, template, plugin, error
 Requires at least: 1.5
-Tested up to: 2.3.2
+Tested up to: 2.5
 Stable tag: trunk
-Version: 0.9.6
+Version: 1.0
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
