@@ -47,7 +47,7 @@ Which is the equivalent of doing :
 
 == Template Tags ==
 
-The plugin provides two functions for your use. *Note: These functions are not limited to use in templates*
+The plugin provides three functions for your use. *Note: These functions are not limited to use in templates*
 
 = Functions =
 
