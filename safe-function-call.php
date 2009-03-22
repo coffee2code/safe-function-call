@@ -1,13 +1,13 @@
 <?php
 /*
 Plugin Name: Safe Function Call
-Version: 1.0
+Version: 1.0.1
 Plugin URI: http://coffee2code.com/wp-plugins/safe-function-call
 Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Safely call functions that may not be available (for example, from within a template, calling a function that is provided by a plugin that may be deactivated).
 
-Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, and 2.5.
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
@@ -42,14 +42,14 @@ Usage:
 	
 	<?php _sfce('largest_city', 'Tx'); ?>
 	
-	Which is the equivalent of doing :
+	Which is roughly equivalent to doing :
 	
-	<?php if function_exists('largest_city') { $value = largest_city('Tx'); echo $value; return $value; } ?>
+	<?php if function_exists('largest_city') { echo largest_city('Tx'); } ?>
 	
 */
 
 /*
-Copyright (c) 2007-2008 by Scott Reilly (aka coffee2code)
+Copyright (c) 2007-2009 by Scott Reilly (aka coffee2code)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
 files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, 
