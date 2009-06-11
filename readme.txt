@@ -1,10 +1,10 @@
 === Safe Function Call ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com
-Tags: function, template, plugin, error
+Donate link: http://coffee2code.com/donate
+Tags: function, template, plugin, error, coffee2code
 Requires at least: 1.5
-Tested up to: 2.7.1
-Stable tag: trunk
+Tested up to: 2.8
+Stable tag: 1.0.1
 Version: 1.0.1
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)

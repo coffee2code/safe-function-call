@@ -7,7 +7,7 @@ Author: Scott Reilly
 Author URI: http://coffee2code.com
 Description: Safely call functions that may not be available (for example, from within a template, calling a function that is provided by a plugin that may be deactivated).
 
-Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+.
+Compatible with WordPress 1.5+, 2.0+, 2.1+, 2.2+, 2.3+, 2.5+, 2.6+, 2.7+, 2.8+.
 
 =>> Read the accompanying readme.txt file for more information.  Also, visit the plugin's homepage
 =>> for more information and the latest updates
