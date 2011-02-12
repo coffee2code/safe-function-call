@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: function, template, plugin, error, coffee2code
 Requires at least: 1.5
-Tested up to: 3.0.1
-Stable tag: 1.1.1
-Version: 1.1.1
+Tested up to: 3.1
+Stable tag: 1.1.2
+Version: 1.1.2
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -122,6 +122,10 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 == Changelog ==
 
+= 1.1.2 =
+* Note compatibility through WP 3.1+
+* Update copyright date (2011)
+
 = 1.1.1 =
 * Wrapped functions in if(function_exists()) checks
 * Note compatibility with WP 3.0+
@@ -143,6 +147,9 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+Trivial update: noted compatibility through WP 3.1+ and updated copyright date
 
 = 1.1.1 =
 Minor update. Wrapped functions in if(function_exists()) checked; noted compatibility with WP 3.0+.
