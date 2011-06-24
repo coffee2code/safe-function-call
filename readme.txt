@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: function, template, plugin, error, coffee2code
 Requires at least: 1.5
-Tested up to: 3.1
-Stable tag: 1.1.3
-Version: 1.1.3
+Tested up to: 3.2
+Stable tag: 1.1.4
+Version: 1.1.4
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -47,7 +47,7 @@ Which is roughly equivalent to doing :
 
 `<?php if function_exists('largest_city') { echo largest_city('Tx'); } ?>`
 
-Links: [Plugin Homepage]:(http://coffee2code.com/wp-plugins/safe-function-call/) | [Author Homepage]:(http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -124,6 +124,11 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 == Changelog ==
 
+= 1.1.4 =
+* Note compatibility through WP 3.2+
+* Minor documentation reformatting in readme.txt
+* Fix plugin homepage and author links in description in readme.txt
+
 = 1.1.3 =
 * Add link to plugin homepage to readme.txt
 
@@ -152,6 +157,9 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+Trivial update: noted compatibility through WP 3.2+ and minor code formatting changes (spacing)
 
 = 1.1.3 =
 Trivial update: documentation tweaks
