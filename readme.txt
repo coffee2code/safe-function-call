@@ -3,9 +3,9 @@ Contributors: coffee2code
 Donate link: http://coffee2code.com/donate
 Tags: function, template, plugin, error, coffee2code
 Requires at least: 1.5
-Tested up to: 3.2
-Stable tag: 1.1.4
-Version: 1.1.4
+Tested up to: 3.3
+Stable tag: 1.1.5
+Version: 1.1.5
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -16,36 +16,36 @@ Safely and easily call functions that may not be available (such as those provid
 
 Assuming you had something like this in a template:
 
-`<?php list_cities('Texas', 3); ?>`
+`<?php list_cities( 'Texas', 3 ); ?>`
 
 If you deactivated the plugin that provided `list_cities()`, your site would generate an error when that template is accessed.
 
 You can instead use `_sfc()`, which is provided by this plugin to call other functions, like so:
 
-`<?php _sfc('list_cities', 'Texas', 3); ?>`
+`<?php _sfc( 'list_cities', 'Texas', 3 ); ?>`
 
 That will simply do nothing if the `list_cities()` function is not available.
 
 If you'd rather display a message when the function does not exist, use `_sfcm()` instead, like so:
 
-`<?php _sfcm('list_cities', 'The cities listing is temporarily disabled.', 'Texas', 3); ?>`
+`<?php _sfcm( 'list_cities', 'The cities listing is temporarily disabled.', 'Texas', 3 ); ?>`
 
 In this case, if `list_cities()` is not available, the text "The cities listing is temporarily disabled." will be displayed.
 
 If you'd rather call another function when the function does not exist, use _sfcf() instead, like so:
 
 `<?php
-	function unavailable_function_handler($function_name) { echo "The function $function_name is not available."; }
-	_sfcf('nonexistent_function', 'unavailable_function_handler');
+	function unavailable_function_handler( $function_name ) { echo "The function $function_name is not available."; }
+	_sfcf( 'nonexistent_function', 'unavailable_function_handler' );
 ?>`
 
 In the event you want to safely call a function and echo its value, you can use `_sfce()` like so:
 
-`<?php _sfce('largest_city', 'Tx'); ?>`
+`<?php _sfce( 'largest_city', 'Tx' ); ?>`
 
 Which is roughly equivalent to doing :
 
-`<?php if function_exists('largest_city') { echo largest_city('Tx'); } ?>`
+`<?php if function_exists( 'largest_city' ) { echo largest_city( 'Tx' ); } ?>`
 
 Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
 
@@ -124,6 +124,10 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 == Changelog ==
 
+= 1.1.5 =
+* Note compatibility through WP 3.3+
+* Minor code documentation reformatting in readme.txt (spacing)
+
 = 1.1.4 =
 * Note compatibility through WP 3.2+
 * Minor documentation reformatting in readme.txt
@@ -157,6 +161,9 @@ The functions provided by this plugin provide a more concise syntax for checking
 
 
 == Upgrade Notice ==
+
+= 1.1.5 =
+Trivial update: noted compatibility through WP 3.3+  and minor code documentation formatting changes (spacing)
 
 = 1.1.4 =
 Trivial update: noted compatibility through WP 3.2+ and minor code formatting changes (spacing)
