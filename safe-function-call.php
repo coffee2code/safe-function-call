@@ -2,11 +2,11 @@
 /**
  * @package Safe_Function_Call
  * @author Scott Reilly
- * @version 1.1.6
+ * @version 1.1.7
  */
 /*
 Plugin Name: Safe Function Call
-Version: 1.1.6
+Version: 1.1.7
 Plugin URI: http://coffee2code.com/wp-plugins/safe-function-call/
 Author: Scott Reilly
 Author URI: http://coffee2code.com/
@@ -14,7 +14,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description: Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated).
 
-Compatible with WordPress 1.5 through 3.4+.
+Compatible with WordPress 1.5 through 3.5+.
 
 =>> Read the accompanying readme.txt file for instructions and documentation.
 =>> Also, visit the plugin's homepage for additional information and updates.
@@ -23,7 +23,7 @@ Compatible with WordPress 1.5 through 3.4+.
 */
 
 /*
-	Copyright (c) 2007-2012 by Scott Reilly (aka coffee2code)
+	Copyright (c) 2007-2013 by Scott Reilly (aka coffee2code)
 
 	This program is free software; you can redistribute it and/or
 	modify it under the terms of the GNU General Public License

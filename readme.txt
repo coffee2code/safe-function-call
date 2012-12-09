@@ -5,9 +5,9 @@ Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.4
-Stable tag: 1.1.6
-Version: 1.1.6
+Tested up to: 3.5
+Stable tag: 1.1.7
+Version: 1.1.7
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -126,6 +126,10 @@ A string representing the name of the function to be called.
 
 == Changelog ==
 
+= 1.1.7 =
+* Note compatibility through WP 3.5+
+* Update copyright date (2013)
+
 = 1.1.6 =
 * Re-license as GPLv2 or later (from X11)
 * Add 'License' and 'License URI' header tags to readme.txt and plugin file
@@ -171,6 +175,9 @@ A string representing the name of the function to be called.
 
 
 == Upgrade Notice ==
+
+= 1.1.7 =
+Trivial update: noted compatibility through WP 3.5+
 
 = 1.1.6 =
 Trivial update: noted compatibility through WP 3.4+; explicitly stated license
