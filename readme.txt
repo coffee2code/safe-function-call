@@ -1,22 +1,28 @@
 === Safe Function Call ===
 Contributors: coffee2code
-Donate link: http://coffee2code.com/donate
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.5
-Stable tag: 1.1.7
-Version: 1.1.7
+Tested up to: 3.8
+Stable tag: 1.2
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
 
 == Description ==
 
-Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated).
+Safely call a function, class method, or object method in a manner that doesn't generate errors if those plugins cease to exist.
 
-Assuming you had something like this in a template:
+Various helper functions are provided that provide handy variations of this theme:
+
+* `_sfc()`: Safely call a function and get its return value
+* `_sfce()`: Safely call a function and echo its return value
+* `_sfcf()`: Safely call a function; if it doesn't exist, then a fallback function (if specified) is called
+* `_sfcm()`: Safely call a function; if it doesn't exist, then echo a message (if provided)
+
+Let's assume you had something like this in a template:
 
 `<?php list_cities( 'Texas', 3 ); ?>`
 
@@ -49,7 +55,7 @@ Which is roughly equivalent to doing :
 
 `<?php if function_exists( 'largest_city' ) { echo largest_city( 'Tx' ); } ?>`
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](http://wordpress.org/plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -65,9 +71,13 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) 
 
 No.
 
-= Why would I use any of these functions instead of checking if `function_exists()` directly? =
+= Why would I use any of these functions instead of using `function_exists()`/`method_exists()` directly? =
 
-The functions provided by this plugin provide a more concise syntax for checking for function existence (using `function_exists()` under the hood). `_sfce()` will both echo and return the echoed value, which may be of use in certain circumstances.  And also, since the name of the function to be safely called is passed as an argument, it can be easily and more concisely parameterized.
+The functions provided by this plugin provide a more concise syntax for checking for function existence (but it does use `function_exists()`/`method_exists()` under the hood). `_sfce()` will both echo and return the echoed value, which may be of use in certain circumstances.  And also, since the callback to be safely called is passed as an argument, it can be easily and more concisely parameterized.
+
+= Does this plugin include unit tests? =
+
+Yes.
 
 
 == Template Tags ==
@@ -76,32 +86,38 @@ The plugin provides four functions for your use. *Note: These functions are not 
 
 = Functions =
 
-* `<?php function _sfc($function_name) ?>`
-This will safely invoke the function by the name of `$function_name`.  You can specify an arbitrary number of additional arguments that will get passed to `$function_name()`.  If `$function_name()` does not exist, nothing is displayed and no error is generated.
+* `<?php function _sfc($callback) ?>`
+This will safely invoke the specified callback. You can specify an arbitrary number of additional arguments that will get passed to it. If the callback does not exist, nothing is displayed and no error is generated.
 
-* `<?php function _sfce($function_name) ?>`
-The same as `_sfc()` except that it echoes the return value of `$function_name()` before returning that value.
+* `<?php function _sfce($callback) ?>`
+The same as `_sfc()` except that it echoes the return value of the callback before returning that value.
 
-* `<?php function _sfcf($function_name, $function_name_if_missing = '') ?>`
-The same as `_sfc()` except that it invokes `$function_name_if_missing()` (if it exists), if `$function_name()` does not exist.  `$function_name_if_missing()` is sent `$function_name` as its first argument, and then subsequently all arguments that would have otherwise been sent to `$function_name()`.
+* `<?php function _sfcf($callback, $fallback_callback = '') ?>`
+The same as `_sfc()` except that it invokes the fallback callback (if it exists) if the callback does not exist.  `$function_name_if_missing()` is sent `$function_name` as its first argument, and then subsequently all arguments that would have otherwise been sent to `$function_name()`.
 
-* `<?php function _sfcm($function_name, $message_if_missing = '') ?>`
-The same as `_sfc()` except that it displays a message (the value of `$message_if_missing`), if `$function_name()` does not exist.
+* `<?php function _sfcm($callback, $message_if_missing = '') ?>`
+The same as `_sfc()` except that it displays a message (the value of `$message_if_missing`), if the callback does not exist.
 
 = Arguments =
 
-* `$function_name`
-A string representing the name of the function to be called.
+* `$callback`
+A string representing the name of the function to be called, or an array of a class or object and its method (as can be done for `add_action()`/`add_filter()`)
 
 * `$message_if_missing`
 (For `_sfcm()` only.)  The message to be displayed if `$function_name()` does not exist as a function.
 
-* `$function_name_if_missing`
-(For `_sfcf()` only.)  The function to be called if `$function_name()` does not exist as a function.
+* `$fallback_callback`
+(For `_sfcf()` only.)  The function to be called if the callback does not exist.
 
 = Examples = 
 
 * `<?php _sfc('list_cities', 'Texas', 3); /* Assuming list_cities() is a valid function */ ?>`
+"Austin, Dallas, Fort Worth"
+
+* `<?php _sfc(array('Cities', 'list_cities'), 'Texas', 3); /* Assuming list_cities() is a valid function in the 'Cities' class */ ?>`
+"Austin, Dallas, Fort Worth"
+
+* `<?php _sfc(array($obj, 'list_cities'), 'Texas', 3); /* Assuming list_cities() is a valid function in the object $obj */ ?>`
 "Austin, Dallas, Fort Worth"
 
 * `<?php _sfc('list_cities', 'Texas', 3); /* Assuming list_cities() is not a valid function */ ?>`
@@ -117,14 +133,26 @@ A string representing the name of the function to be called.
 "Houston"
 
 * `<?php
-	function unavailable_function_handler( $function_name ) {
-		echo "Sorry, but the function {$function_name}() does not exist.";
+	function unavailable_function_handler( $callback ) {
+		echo "Sorry, but the function {$callback}() does not exist.";
 	}
 	_sfcf('nonexistent_function', 'unavailable_function_handler');
 	?>`
 
 
 == Changelog ==
+
+= 1.2 (2013-12-19) =
+* Add support for full callback usage
+* Add `__sfc_is_valid_callback()` to validate callbacks; use it in all functions
+* Add unit tests
+* Substantial changes to inline documentation
+* Substantial changes to documentation
+* Minor code formatting tweak (add curly braces)
+* Note compatibility through WP 3.8+
+* Update copyright date (2014)
+* Change donate link
+* Add banner
 
 = 1.1.7 =
 * Note compatibility through WP 3.5+
@@ -175,6 +203,9 @@ A string representing the name of the function to be called.
 
 
 == Upgrade Notice ==
+
+= 1.2 =
+Recommended update: added support for full callback usage; improved documentation; added unit tests; noted compatibility through WP 3.8+
 
 = 1.1.7 =
 Trivial update: noted compatibility through WP 3.5+
