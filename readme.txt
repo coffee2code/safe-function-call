@@ -5,8 +5,8 @@ Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 3.8
-Stable tag: 1.2
+Tested up to: 4.0
+Stable tag: 1.2.1
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -55,7 +55,7 @@ Which is roughly equivalent to doing :
 
 `<?php if function_exists( 'largest_city' ) { echo largest_city( 'Tx' ); } ?>`
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](http://wordpress.org/plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](https://wordpress.org/plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -142,6 +142,14 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.2.1 (2014-08-25) =
+* Die early if script is directly invoked
+* Minor plugin header reformatting
+* Minor code reformatting (spacing)
+* Change documentation links to wp.org to be https
+* Note compatibility through WP 4.0+
+* Add plugin icon
+
 = 1.2 (2013-12-19) =
 * Add support for full callback usage
 * Add `__sfc_is_valid_callback()` to validate callbacks; use it in all functions
@@ -203,6 +211,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 
 == Upgrade Notice ==
+
+= 1.2.1 =
+Trivial update: noted compatibility through WP 4.0+; added plugin icon.
 
 = 1.2 =
 Recommended update: added support for full callback usage; improved documentation; added unit tests; noted compatibility through WP 3.8+
