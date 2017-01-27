@@ -142,6 +142,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= () =
+* Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
+
 = 1.2.4 (2015-12-10) =
 * Change: Note compatibility through WP 4.4+
 * Change: Explicitly declare methods in unit tests as public or protected.
