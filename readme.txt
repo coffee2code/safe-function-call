@@ -145,6 +145,7 @@ A string representing the name of the function to be called, or an array of a cl
 = () =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
+* Change: Update copyright date (2017).
 * New: Add LICENSE file.
 * New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
 
