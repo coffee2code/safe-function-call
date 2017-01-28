@@ -5,7 +5,7 @@ Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 4.4
+Tested up to: 4.7
 Stable tag: 1.2.4
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
@@ -145,6 +145,7 @@ A string representing the name of the function to be called, or an array of a cl
 = () =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
+* Change: Note compatibility through WP 4.7+.
 * Change: Update copyright date (2017).
 * New: Add LICENSE file.
 * New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
