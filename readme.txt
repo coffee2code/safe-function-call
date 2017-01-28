@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 4.7
-Stable tag: 1.2.4
+Stable tag: 1.2.5
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,7 +142,7 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
-= () =
+= 1.2.5 (2017-01-27) =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
@@ -235,6 +235,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 
 == Upgrade Notice ==
+
+= 1.2.5 =
+Trivial update: tweaked readme, changed unit test bootstrap, noted compatibility through WP 4.7+, and updated copyright date
 
 = 1.2.4 =
 Trivial update: noted compatibility through WP 4.4+ and updated copyright date
