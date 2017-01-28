@@ -60,7 +60,7 @@ Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) 
 
 == Installation ==
 
-1. Unzip `safe-function-call.zip` inside the `/wp-content/plugins/` directory (or install via the built-in WordPress plugin installer)
+1. Install via the built-in WordPress plugin installer. Or download and unzip `safe-function-call.zip` inside the plugins directory for your site (typically `wp-content/plugins/`)
 1. Activate the plugin through the 'Plugins' admin menu in WordPress
 1. Use any of the four functions provided by this plugin as desired
 
@@ -73,7 +73,7 @@ No.
 
 = Why would I use any of these functions instead of using `function_exists()`/`method_exists()` directly? =
 
-The functions provided by this plugin provide a more concise syntax for checking for function existence (but it does use `function_exists()`/`method_exists()` under the hood). `_sfce()` will both echo and return the echoed value, which may be of use in certain circumstances.  And also, since the callback to be safely called is passed as an argument, it can be easily and more concisely parameterized.
+The functions provided by this plugin provide a more concise syntax for checking for function existence (but they do use `function_exists()`/`method_exists()` under the hood). `_sfce()` will both echo and return the echoed value, which may be of use in certain circumstances.  And also, since the callback to be safely called is passed as an argument, it can be easily and more concisely parameterized.
 
 = Does this plugin include unit tests? =
 
@@ -147,6 +147,7 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
 * Change: Minor inline code documentation reformatting.
+* Change: Minor readme.txt improvements.
 * Change: Update copyright date (2017).
 * Change: Add 'Text Domain' to plugin header.
 * New: Add LICENSE file.
