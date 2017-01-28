@@ -146,6 +146,7 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
+* Change: Minor inline code documentation reformatting.
 * Change: Update copyright date (2017).
 * Change: Add 'Text Domain' to plugin header.
 * New: Add LICENSE file.

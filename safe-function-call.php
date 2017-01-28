@@ -47,8 +47,8 @@ if ( ! function_exists( '__sfc_is_valid_callback' ) ) {
 	 * arguments will get passed to $callback().  If the callback does
 	 * not exist, nothing is displayed and no error is generated.
 	 *
-	 * @param callback $callback The function to call.
-	 * @return bool True if callback is valid, false otherwise.
+	 * @param  string $callback The function to call.
+	 * @return bool             True if callback is valid, false otherwise.
 	 */
 	function __sfc_is_valid_callback( $callback ) {
 		if ( is_string( $callback ) ) {
@@ -73,8 +73,10 @@ if ( ! function_exists( '_sfc' ) ) :
 	 * result. Any additional arguments will get passed to $callback(). If the
 	 * callback does not exist, nothing is displayed and no error is generated.
 	 *
-	 * @param callback $callback The function to call.
-	 * @return mixed If the callback exists as a function, returns whatever that function returns. Otherwise, returns nothing.
+	 * @param  string $callback The function to call.
+	 * @return mixed            If $callback exists as a function, returns whatever
+	 *                          whatever that function returns. Otherwise, returns
+	 *                          nothing.
 	 */
 	function _sfc( $callback ) {
 		if ( __sfc_is_valid_callback( $callback ) ) {
@@ -94,8 +96,10 @@ if ( ! function_exists( '_sfce' ) ) :
 	 * This function is the same as _sfc() except that it echoes the return value
 	 * of the callback before returning that value.
 	 *
-	 * @param string $callback The function to call.
-	 * @return mixed If the callback exists as a function, returns whatever that function returns. Otherwise, returns nothing.
+	 * @param  string $callback The function to call.
+	 * @return mixed            If $callback exists as a function, returns whatever
+	 *                          whatever that function returns. Otherwise, returns
+	 *                          nothing.
 	 */
 	function _sfce( $callback ) {
 		if ( __sfc_is_valid_callback( $callback ) ) {
@@ -118,9 +122,12 @@ if ( ! function_exists( '_sfcf' ) ) :
 	 * does not exist, then an alternative function is invoked (if it exists
 	 * itself).
 	 *
-	 * @param string $callback The function to call.
-	 * @param string $fallback_callback (optional) Name of the alternative function to call if the callback does not exist.
-	 * @return mixed If the callback exists as a function, returns whatever that function returns. Otherwise, returns nothing.
+	 * @param  string $callback          The function to call.
+	 * @param  string $fallback_callback Optional. Name of alternative function to
+	 *                                   call if callback does not exist. Default ''.
+	 * @return mixed                     If $callback exists as a function, returns
+	 *                                   whatever that function returns. Otherwise,
+	 *                                   returns nothing.
 	 */
 	function _sfcf( $callback, $fallback_callback = null ) {
 		$args = array_slice( func_get_args(), 2 );
@@ -145,9 +152,12 @@ if ( ! function_exists( '_sfcm' ) ) :
 	 * This functions is the same as _sfc() except that if the intended function
 	 * does not exist, then a string is echoed (if provided).
 	 *
-	 * @param string $callback The function to call.
-	 * @param string $msg_if_missing (optional) String to be echoed if $callback does not exist.
-	 * @return mixed If $callback exists as a function, returns whatever that function returns. Otherwise, returns nothing.
+	 * @param  string $callback       The function to call.
+	 * @param  string $msg_if_missing Optional. String to be echoed if $callback
+	 *                                does not exist. Default ''.
+	 * @return mixed                  If $callback exists as a function, returns
+	 *                                whatever that function returns. Otherwise,
+	 *                                returns nothing.
 	 */
 	function _sfcm( $callback, $msg_if_missing = '' ) {
 		if ( ! __sfc_is_valid_callback( $callback ) ) {
