@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) or die();
+
 function sfc_test_real_function( $arg1, $arg2 = '' ) {
 	return "$arg1 + $arg2";
 }

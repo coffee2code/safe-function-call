@@ -149,6 +149,7 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Minor inline code documentation reformatting.
 * Change: Minor readme.txt improvements.
 * Change: Update copyright date (2017).
+* Change: Prevent direct invocation of test file.
 * Change: Add 'Text Domain' to plugin header.
 * New: Add LICENSE file.
 * New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
