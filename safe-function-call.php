@@ -5,6 +5,7 @@
  * Plugin URI:  http://coffee2code.com/wp-plugins/safe-function-call/
  * Author:      Scott Reilly
  * Author URI:  http://coffee2code.com/
+ * Text Domain: safe-function-call
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Description: Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated).

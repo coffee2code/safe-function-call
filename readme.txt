@@ -147,6 +147,7 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Enable more error output for unit tests.
 * Change: Note compatibility through WP 4.7+.
 * Change: Update copyright date (2017).
+* Change: Add 'Text Domain' to plugin header.
 * New: Add LICENSE file.
 * New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
 
