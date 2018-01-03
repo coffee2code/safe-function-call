@@ -55,7 +55,7 @@ Which is roughly equivalent to doing :
 
 `<?php if function_exists( 'largest_city' ) { echo largest_city( 'Tx' ); } ?>`
 
-Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](https://wordpress.org/plugins/safe-function-call/) | [Author Homepage](http://coffee2code.com)
+Links: [Plugin Homepage](http://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](https://wordpress.org/plugins/safe-function-call/) | [GitHub](https://github.com/coffee2code/safe-function-call/) | [Author Homepage](http://coffee2code.com)
 
 
 == Installation ==
@@ -143,6 +143,7 @@ A string representing the name of the function to be called, or an array of a cl
 == Changelog ==
 
 = () =
+* Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
 
