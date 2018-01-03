@@ -142,6 +142,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= () =
+* Change: Update copyright date (2018)
+
 = 1.2.5 (2017-01-27) =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
 * Change: Enable more error output for unit tests.
