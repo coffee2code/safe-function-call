@@ -143,6 +143,7 @@ A string representing the name of the function to be called, or an array of a cl
 == Changelog ==
 
 = () =
+* New: Add README.md
 * Change: Unit tests: Minor whitespace changes
 * Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
