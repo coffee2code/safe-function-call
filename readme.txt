@@ -149,6 +149,7 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+
 * Change: Update copyright date (2018)
+* Change: Unit tests: Add comments to denote groupings of unit tests testing a given function
 
 = 1.2.5 (2017-01-27) =
 * Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.

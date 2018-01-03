@@ -34,6 +34,8 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 	//
 
 
+	/* _sfc() */
+
 	public function test__sfc_on_nonexistent_function() {
 		$this->assertEmpty( _sfc( 'doesnt_exist', 5, 'a' ) );
 		$this->assertEmpty( _sfc( array( $this, 'fake_object_function' ), 5, 'a' ) );
@@ -43,6 +45,8 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 		$this->assertEquals( "5 + a", _sfc( 'sfc_test_real_function', 5, 'a' ) );
 		$this->assertEquals( "a + 5", _sfc( array( $this, 'real_object_function' ), 5, 'a' ) );
 	}
+
+	/* _sfce() */
 
 	public function test__sfce_on_nonexistent_function() {
 		$this->assertEmpty( _sfce( 'doesnt_exist', 5, 'a' ) );
@@ -66,6 +70,8 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 
 	}
 
+	/* _sfcf() */
+
 	public function test__sfcf_on_nonexistent_function_with_no_fallback() {
 		$this->assertEmpty( _sfcf( 'doesnt_exist' ) );
 		$this->assertEmpty( _sfcf( array( $this, 'fake_object_function' ) ) );
@@ -80,6 +86,8 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 		$this->assertEquals( "5 + a", _sfcf( 'sfc_test_real_function', 'sfc_test_fallback', 5, 'a' ) );
 		$this->assertEquals( "a + 5", _sfcf( array( $this, 'real_object_function' ), array( $this, 'fallback' ), 5, 'a' ) );
 	}
+
+	/* _sfcm() */
 
 	public function test__sfcm_on_nonexistent_function() {
 		$this->assertEmpty( _sfcm( 'doesnt_exist' ) );
