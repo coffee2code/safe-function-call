@@ -1,6 +1,6 @@
 # Safe Function Call
 
-Helper functions for safely and easily calling PHP functions that may not be available at runtime. Can be used generally in PHP projects or in WordPress as a plugin (for which is has the requisite layout).
+Helper functions for safely and easily calling PHP functions that may not be available at runtime. Can be used generally in PHP projects or in WordPress as a plugin (for which it has the requisite layout).
 
 
 ## Installation
