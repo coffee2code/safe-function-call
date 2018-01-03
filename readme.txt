@@ -144,6 +144,7 @@ A string representing the name of the function to be called, or an array of a cl
 
 = () =
 * New: Add README.md
+* Change: Remove check that prevented use if `ABSPATH` isn't defined, allowing use of the code outside WordPress
 * Change: Unit tests: Minor whitespace changes
 * Change: Add GitHub link to readme
 * Change: Note compatibility through WP 4.9+

@@ -39,8 +39,6 @@
 	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-defined( 'ABSPATH' ) or die();
-
 if ( ! function_exists( '__sfc_is_valid_callback' ) ) {
 	/**
 	 * Safely invoke the function by the name of $callback.  Any additional
