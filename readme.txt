@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 4.9
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,7 +142,7 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
-= () =
+= 1.2.6 (2018-01-02) =
 * New: Add README.md
 * Change: Remove check that prevented use if `ABSPATH` isn't defined, allowing use of the code outside WordPress
 * Change: Unit tests: Minor whitespace changes
@@ -244,6 +244,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 
 == Upgrade Notice ==
+
+= 1.2.6 =
+Trivial update: made script usable outside of PHP, added README.md and GitHub link, noted compatibility through WP 4.9+, and updated copyright date
 
 = 1.2.5 =
 Trivial update: tweaked readme, changed unit test bootstrap, noted compatibility through WP 4.7+, and updated copyright date
