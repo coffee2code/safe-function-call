@@ -101,9 +101,12 @@ if ( ! function_exists( '_sfce' ) ) :
 	 */
 	function _sfce( $callback ) {
 		if ( __sfc_is_valid_callback( $callback ) ) {
-			$args = func_get_args();
+			$args  = func_get_args();
 			$value = call_user_func_array( '_sfc', $args );
-			if ( $value ) echo $value;
+			if ( $value ) {
+				echo $value;
+			}
+
 			return $value;
 		}
 	}
