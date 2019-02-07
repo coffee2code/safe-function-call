@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.7 _(2019-02-06)_
+* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
+* README.md:
+    * New: Add instructions for use as a general PHP library
+    * New: Add link to plugin's WordPress Plugin Directory page
+    * Change: Split paragraph in README.md's "Support" section into two
+* Change: Note compatibility through WP 5.1+
+* Change: Update copyright date (2019)
+* Change: Update License URI to be HTTPS
+
 ## 1.2.6 _(2018-01-02)_
 * New: Add README.md
 * Change: Remove check that prevented use if `ABSPATH` isn't defined, allowing use of the code outside WordPress

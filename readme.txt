@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.1
-Stable tag: 1.2.6
+Stable tag: 1.2.7
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,7 +142,7 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
-= () =
+= 1.2.7 (2019-02-06) =
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * README.md:
     * New: Add instructions for use as a general PHP library
@@ -177,6 +177,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/sa
 
 
 == Upgrade Notice ==
+
+= 1.2.7 =
+Trivial update: created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.1+, and updated copyright date (2019)
 
 = 1.2.6 =
 Trivial update: made script usable outside of PHP, added README.md and GitHub link, noted compatibility through WP 4.9+, and updated copyright date
