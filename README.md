@@ -2,6 +2,8 @@
 
 Helper functions for safely and easily calling PHP functions that may not be available at runtime. Can be used generally in PHP projects or in WordPress as a plugin (for which it has the requisite layout).
 
+This plugin is available in the WordPress Plugin Directory: https://wordpress.org/plugins/safe-function-call/
+
 
 ## Installation
 
