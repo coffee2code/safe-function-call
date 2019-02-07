@@ -21,7 +21,7 @@ Use as a WordPress plugin:
 
 ## Additional Documentation
 
-See [readme.txt](https://github.com/coffee2code/safe-function-call/blob/master/readme.txt) for additional usage information.
+See [readme.txt](https://github.com/coffee2code/safe-function-call/blob/master/readme.txt) for additional usage information. See [CHANGELOG.md](CHANGELOG.md) for the list of changes for each release.
 
 
 ## Support
