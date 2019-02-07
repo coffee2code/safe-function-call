@@ -3,7 +3,7 @@ Contributors: coffee2code
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6ARCFJ9TX3522
 Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 4.9
 Stable tag: 1.2.6
@@ -141,6 +141,9 @@ A string representing the name of the function to be called, or an array of a cl
 
 
 == Changelog ==
+
+= () =
+* Change: Update License URI to be HTTPS
 
 = 1.2.6 (2018-01-02) =
 * New: Add README.md
