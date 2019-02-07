@@ -143,6 +143,7 @@ A string representing the name of the function to be called, or an array of a cl
 == Changelog ==
 
 = () =
+* Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
 = 1.2.6 (2018-01-02) =
