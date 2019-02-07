@@ -5,6 +5,13 @@ Helper functions for safely and easily calling PHP functions that may not be ava
 
 ## Installation
 
+Use as a general PHP helper:
+
+1. Include the `safe-function-call.php` in your code.
+2. Use any of the four functions provided by this script in your own code.
+
+Use as a WordPress plugin:
+
 1. Install via the built-in WordPress plugin installer. Or install the plugin code inside the plugins directory for your site (typically `/wp-content/plugins/`).
 2. Activate the plugin through the 'Plugins' admin menu in WordPress
 3. Use any of the four functions provided by this plugin as desired
