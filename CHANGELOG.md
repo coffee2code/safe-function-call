@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Note compatibility through WP 5.2+
+
 ## 1.2.7 _(2019-02-06)_
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * README.md:
