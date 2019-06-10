@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.2
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,6 +142,10 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.2.8 (2019-06-09) =
+* Change: Update unit test install script and bootstrap to use latest WP unit test repo
+* Change: Note compatibility through WP 5.2+
+
 = 1.2.7 (2019-02-06) =
 * New: Add CHANGELOG.md file and move all but most recent changelog entries into it
 * README.md:
@@ -161,22 +165,13 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Update copyright date (2018)
 * Change: Unit tests: Add comments to denote groupings of unit tests testing a given function
 
-= 1.2.5 (2017-01-27) =
-* Change: Default `WP_TESTS_DIR` to `/tmp/wordpress-tests-lib` rather than erroring out if not defined via environment variable.
-* Change: Enable more error output for unit tests.
-* Change: Note compatibility through WP 4.7+.
-* Change: Minor inline code documentation reformatting.
-* Change: Minor readme.txt improvements.
-* Change: Update copyright date (2017).
-* Change: Prevent direct invocation of test file.
-* Change: Add 'Text Domain' to plugin header.
-* New: Add LICENSE file.
-* New: Add empty index.php to prevent files from being listed if web server has enabled directory listings.
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.2.8 =
+Trivial update: modernized unit tests, noted compatibility through WP 5.2+
 
 = 1.2.7 =
 Trivial update: created CHANGELOG.md to store historical changelog outside of readme.txt, noted compatibility through WP 5.1+, and updated copyright date (2019)
