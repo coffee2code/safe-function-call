@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.3
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,6 +142,10 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.2.9 (2019-12-26) =
+* Change: Note compatibility through WP 5.3+
+* Change: Update copyright date (2020)
+
 = 1.2.8 (2019-06-09) =
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo
 * Change: Note compatibility through WP 5.2+
@@ -156,19 +160,13 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Update copyright date (2019)
 * Change: Update License URI to be HTTPS
 
-= 1.2.6 (2018-01-02) =
-* New: Add README.md
-* Change: Remove check that prevented use if `ABSPATH` isn't defined, allowing use of the code outside WordPress
-* Change: Unit tests: Minor whitespace changes
-* Change: Add GitHub link to readme
-* Change: Note compatibility through WP 4.9+
-* Change: Update copyright date (2018)
-* Change: Unit tests: Add comments to denote groupings of unit tests testing a given function
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.2.9 =
+Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)
 
 = 1.2.8 =
 Trivial update: modernized unit tests, noted compatibility through WP 5.2+
