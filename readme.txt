@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.4
-Stable tag: 1.2.9
+Stable tag: 1.2.10
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -142,6 +142,11 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.2.10 (2020-04-30) =
+* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
+* Change: Note compatibility through WP 5.4+
+* Change: Update links to coffee2code.com to be HTTPS
+
 = 1.2.9 (2019-12-26) =
 * Change: Note compatibility through WP 5.3+
 * Change: Update copyright date (2020)
@@ -150,20 +155,13 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Update unit test install script and bootstrap to use latest WP unit test repo
 * Change: Note compatibility through WP 5.2+
 
-= 1.2.7 (2019-02-06) =
-* New: Add CHANGELOG.md file and move all but most recent changelog entries into it
-* README.md:
-    * New: Add instructions for use as a general PHP library
-    * New: Add link to plugin's WordPress Plugin Directory page
-    * Change: Split paragraph in README.md's "Support" section into two
-* Change: Note compatibility through WP 5.1+
-* Change: Update copyright date (2019)
-* Change: Update License URI to be HTTPS
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.2.10 =
+Trivial update: Updated a few URLs to be HTTPS and noted compatibility through WP 5.4+.
 
 = 1.2.9 =
 Trivial update: noted compatibility through WP 5.3+ and updated copyright date (2020)

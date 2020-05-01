@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Safe Function Call
- * Version:     1.2.9
+ * Version:     1.2.10
  * Plugin URI:  https://coffee2code.com/wp-plugins/safe-function-call/
  * Author:      Scott Reilly
  * Author URI:  https://coffee2code.com/
@@ -18,7 +18,7 @@
  *
  * @package Safe_Function_Call
  * @author  Scott Reilly
- * @version 1.2.9
+ * @version 1.2.10
  */
 
 /*
