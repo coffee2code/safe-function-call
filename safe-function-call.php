@@ -10,7 +10,7 @@
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Description: Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated).
  *
- * Compatible with WordPress 1.5 through 5.5+.
+ * Compatible with WordPress 1.5 through 5.7+.
  *
  * =>> Read the accompanying readme.txt file for instructions and documentation.
  * =>> Also, visit the plugin's homepage for additional information and updates.
