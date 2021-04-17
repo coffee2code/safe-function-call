@@ -41,11 +41,10 @@
 
 if ( ! function_exists( '__sfc_is_valid_callback' ) ) {
 	/**
-	 * Safely invoke the function by the name of $callback.  Any additional
-	 * arguments will get passed to $callback().  If the callback does
-	 * not exist, nothing is displayed and no error is generated.
+	 * Determines if a callback is valid.
 	 *
-	 * @param  string $callback The function to call.
+	 * @param  string $callback The callback. Either a string to represent a
+	 *                          function or an array to represent a method.
 	 * @return bool             True if callback is valid, false otherwise.
 	 */
 	function __sfc_is_valid_callback( $callback ) {
@@ -73,8 +72,7 @@ if ( ! function_exists( '_sfc' ) ) :
 	 *
 	 * @param  string $callback The function to call.
 	 * @return mixed            If $callback exists as a function, returns whatever
-	 *                          whatever that function returns. Otherwise, returns
-	 *                          nothing.
+	 *                          that function returns. Otherwise, returns nothing.
 	 */
 	function _sfc( $callback ) {
 		if ( __sfc_is_valid_callback( $callback ) ) {
@@ -96,8 +94,7 @@ if ( ! function_exists( '_sfce' ) ) :
 	 *
 	 * @param  string $callback The function to call.
 	 * @return mixed            If $callback exists as a function, returns whatever
-	 *                          whatever that function returns. Otherwise, returns
-	 *                          nothing.
+	 *                          that function returns. Otherwise, returns nothing.
 	 */
 	function _sfce( $callback ) {
 		if ( __sfc_is_valid_callback( $callback ) ) {
