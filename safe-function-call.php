@@ -80,6 +80,7 @@ if ( ! function_exists( '_sfc' ) ) :
 			return call_user_func_array( $callback, $args );
 		}
 	}
+	add_filter( '_sfc', '_sfc', 10, 50 );
 endif;
 
 
@@ -107,6 +108,7 @@ if ( ! function_exists( '_sfce' ) ) :
 			return $value;
 		}
 	}
+	add_filter( '_sfce', '_sfce', 10, 50 );
 endif;
 
 
@@ -138,6 +140,7 @@ if ( ! function_exists( '_sfcf' ) ) :
 		}
 		return call_user_func_array( $callback, $args );
 	}
+	add_filter( '_sfcf', '_sfcf', 10, 50 );
 endif;
 
 
@@ -167,4 +170,5 @@ if ( ! function_exists( '_sfcm' ) ) :
 		$args = array_slice( func_get_args(), 2 );
 		return call_user_func_array( $callback, $args );
 	}
+	add_filter( '_sfcm', '_sfcm', 10, 50 );
 endif;

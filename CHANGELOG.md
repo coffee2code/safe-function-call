@@ -1,6 +1,11 @@
 # Changelog
 
 ## _(in-progress)_
+* New: Support filter invocation for all functions
+    * Add filter `_sfc` to support filter invocation method `_sfc()`
+    * Add filter `_sfce` to support filter invocation method `_sfce()`
+    * Add filter `_sfcf` to support filter invocation method `_sfcf()`
+    * Add filter `_sfcm` to support filter invocation method `_sfcm()`
 * Change: Fix incorrect function docblock description and remove repeated word in some parameter docblocks
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)

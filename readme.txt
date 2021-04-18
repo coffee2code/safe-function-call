@@ -55,6 +55,36 @@ Which is roughly equivalent to doing :
 
 `<?php if function_exists( 'largest_city' ) { echo largest_city( 'Tx' ); } ?>`
 
+= Filter invocation method =
+
+To further prevent issues in your code should this plugin itself become deactivated, you can use indirect filter invocation to call the plugin functions. Each function has an associated filter with the same name as the function. Simply use `apply_filters()` to invoke that function instead of calling the function directly.
+
+E.g. instead of:
+
+`<?php _sfce( 'some_plugin_function_that_echoes', 'argument' ); ?>`
+
+Do:
+
+`<?php apply_filters( '_sfce', 'some_plugin_function_that_echoes', 'argument' ); ?>`
+
+If you're relying on the return value of a function and this plugin gets deactivated, note that the `apply_filters()` call will return the name of the function you intended to call, so you should check the return value to ensure the function got called.
+
+Instead of:
+
+`<?php $x = _sfc( 'some_plugin_function', 'argument' ); ?>`
+
+Do:
+
+`<?php
+	$x = apply_filters( '_sfcq', 'some_plugin_function', 'argument' );
+	if ( $x !== 'some_plugin_function' ) {
+		// Work with the value of $x here.
+	} else {
+		// The Safe Function Call plugin isn't active.
+		$x = 0; // Maybe set the variable to something that makes sense in this scenario.
+	}
+?>`
+
 Links: [Plugin Homepage](https://coffee2code.com/wp-plugins/safe-function-call/) | [Plugin Directory Page](https://wordpress.org/plugins/safe-function-call/) | [GitHub](https://github.com/coffee2code/safe-function-call/) | [Author Homepage](https://coffee2code.com)
 
 
@@ -74,6 +104,12 @@ No.
 = Why would I use any of these functions instead of using `function_exists()`/`method_exists()` directly? =
 
 The functions provided by this plugin provide a more concise syntax for checking for function existence (but they do use `function_exists()`/`method_exists()` under the hood). `_sfce()` will both echo and return the echoed value, which may be of use in certain circumstances.  And also, since the callback to be safely called is passed as an argument, it can be easily and more concisely parameterized.
+
+= Won't the problems this plugin addresses become a problem when using this plugin if it itself gets deactivated? =
+
+Yes, if you make direct use of one of this plugin's functions and then deactivate the plugin, you will likely encounter an error.
+
+However, if you make use indirect filter invocation, you can prevent errors. See the "Filter invocation method" section of the extended plugin description for example code.
 
 = Does this plugin include unit tests? =
 
