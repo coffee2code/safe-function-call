@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.7
-Stable tag: 1.2.11
+Stable tag: 1.3
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -178,6 +178,22 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.3 (2021-04-17) =
+Highlights:
+
+* This minor release adds support for a safer method of invoking the plugin's own functions in a way that safeguards your usage against errors if the plugin gets deactivated and also notes compatibility through WP 5.7+.
+
+Details:
+
+* New: Support filter invocation for all functions
+    * Add filter `_sfc` to support filter invocation method `_sfc()`
+    * Add filter `_sfce` to support filter invocation method `_sfce()`
+    * Add filter `_sfcf` to support filter invocation method `_sfcf()`
+    * Add filter `_sfcm` to support filter invocation method `_sfcm()`
+* Change: Fix incorrect function docblock description and remove repeated word in some parameter docblocks
+* Change: Note compatibility through WP 5.7+
+* Change: Update copyright date (2021)
+
 = 1.2.11 (2020-09-09) =
 * Change: Restructure unit test file structure
     * New: Create new subdirectory `phpunit/` to house all files related to unit testing
@@ -192,14 +208,13 @@ A string representing the name of the function to be called, or an array of a cl
 * Change: Note compatibility through WP 5.4+
 * Change: Update links to coffee2code.com to be HTTPS
 
-= 1.2.9 (2019-12-26) =
-* Change: Note compatibility through WP 5.3+
-* Change: Update copyright date (2020)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.3 =
+Minor update: added support for a safer method of invoking the plugin's own functions in a way that safeguards your usage against errors if the plugin gets deactivated, noted compatibility through WP 5.7+., and updated copyright date (2021).
 
 = 1.2.11 =
 Trivial update: Restructured unit test file structure and noted compatibility through WP 5.5+.

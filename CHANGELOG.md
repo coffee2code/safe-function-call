@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 1.3 _(2021-04-17)_
+
+### Highlights:
+
+This minor release adds support for a safer method of invoking the plugin's own functions in a way that safeguards your usage against errors if the plugin gets deactivated and also notes compatibility through WP 5.7+.
+
+### Details:
+
 * New: Support filter invocation for all functions
     * Add filter `_sfc` to support filter invocation method `_sfc()`
     * Add filter `_sfce` to support filter invocation method `_sfce()`
