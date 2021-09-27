@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 5.8
-Stable tag: 1.3
+Stable tag: 1.3.1
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -178,6 +178,16 @@ A string representing the name of the function to be called, or an array of a cl
 
 == Changelog ==
 
+= 1.3.1 (2021-09-26) =
+* Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `phpunit/bin/` into `tests/`
+        * Change: Move `phpunit/` into `tests/`
+    * Change: Remove 'test-' prefix from unit test file
+    * Change: In bootstrap, store path to plugin file constant
+    * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
+
 = 1.3 (2021-04-17) =
 Highlights:
 
@@ -203,15 +213,13 @@ Details:
     * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
 * Change: Note compatibility through WP 5.5+
 
-= 1.2.10 (2020-04-30) =
-* Change: Use HTTPS for link to WP SVN repository in bin script for configuring unit tests
-* Change: Note compatibility through WP 5.4+
-* Change: Update links to coffee2code.com to be HTTPS
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.3.1 =
+Trivial update: noted compatibility through WP 5.8+ and minor reorganization and tweaks to unit tests
 
 = 1.3 =
 Minor update: added support for a safer method of invoking the plugin's own functions in a way that safeguards your usage against errors if the plugin gets deactivated, noted compatibility through WP 5.7+., and updated copyright date (2021).
