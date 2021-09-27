@@ -2,6 +2,10 @@
 
 ## _(in-progress)_
 * Change: Note compatibility through WP 5.8+
+* Unit tests:
+    * Change: Restructure unit test directories
+        * Change: Move `phpunit/bin/` into `tests/`
+        * Change: Move `phpunit/` into `tests/`
 
 ## 1.3 _(2021-04-17)_
 

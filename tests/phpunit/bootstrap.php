@@ -20,7 +20,7 @@ require_once $_tests_dir . '/tests/phpunit/includes/functions.php';
  * Manually load the plugin being tested.
  */
 function _manually_load_plugin() {
-	require dirname( dirname( __FILE__ ) ) . '/safe-function-call.php';
+	require dirname( __FILE__, 3 ) . '/safe-function-call.php';
 }
 tests_add_filter( 'muplugins_loaded', '_manually_load_plugin' );
 
