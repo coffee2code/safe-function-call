@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * New: Add TODO.md with potential TODO items
+* Change: Improve some inline documentation formatting
 * Change: Note compatibility through WP 6.3+
 * Change: Update copyright date (2023)
 

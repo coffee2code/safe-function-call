@@ -66,12 +66,12 @@ if ( ! function_exists( '__sfc_is_valid_callback' ) ) {
 
 if ( ! function_exists( '_sfc' ) ) :
 	/**
-	 * Safely invoke the function by the name of $callback and return the
-	 * result. Any additional arguments will get passed to $callback(). If the
+	 * Safely invoke the function by the name of `$callback` and return the
+	 * result. Any additional arguments will get passed to `$callback()`. If the
 	 * callback does not exist, nothing is displayed and no error is generated.
 	 *
 	 * @param  string $callback The function to call.
-	 * @return mixed            If $callback exists as a function, returns whatever
+	 * @return mixed            If `$callback` exists as a function, returns whatever
 	 *                          that function returns. Otherwise, returns nothing.
 	 */
 	function _sfc( $callback ) {
@@ -86,15 +86,15 @@ endif;
 
 if ( ! function_exists( '_sfce' ) ) :
 	/**
-	 * Safely invoke the function by the name of $callback and echo and return
+	 * Safely invoke the function by the name of `$callback` and echo and return
 	 * the result. Any additional arguments will get passed to it. If the callback
 	 * does not exist, nothing is displayed and no error is generated.
 	 *
-	 * This function is the same as _sfc() except that it echoes the return value
+	 * This function is the same as `_sfc()` except that it echoes the return value
 	 * of the callback before returning that value.
 	 *
 	 * @param  string $callback The function to call.
-	 * @return mixed            If $callback exists as a function, returns whatever
+	 * @return mixed            If `$callback` exists as a function, returns whatever
 	 *                          that function returns. Otherwise, returns nothing.
 	 */
 	function _sfce( $callback ) {
@@ -114,18 +114,18 @@ endif;
 
 if ( ! function_exists( '_sfcf' ) ) :
 	/**
-	 * Safely invoke the function by the name of $callback and return the
+	 * Safely invoke the function by the name of `$callback` and return the
 	 * result. Any additional arguments will get passed to it. If the callback
 	 * does not exist, then an alternative function is called.
 	 *
-	 * This functions is the same as _sfc() except that if the intended function
+	 * This functions is the same as `_sfc()` except that if the intended function
 	 * does not exist, then an alternative function is invoked (if it exists
 	 * itself).
 	 *
 	 * @param  string $callback          The function to call.
 	 * @param  string $fallback_callback Optional. Name of alternative function to
 	 *                                   call if callback does not exist. Default ''.
-	 * @return mixed                     If $callback exists as a function, returns
+	 * @return mixed                     If `$callback` exists as a function, returns
 	 *                                   whatever that function returns. Otherwise,
 	 *                                   returns nothing.
 	 */
@@ -146,17 +146,17 @@ endif;
 
 if ( ! function_exists( '_sfcm' ) ) :
 	/**
-	 * Safely invoke the function by the name of $callback and return the
-	 * result. Any additional arguments will get passed to it. If the callback
-	 * does not exist, then a message gets echoed.
+	 * Safely invoke the function by the name of `$callback` and return the
+	 * result. Any additional arguments will get passed to the callback. If the
+	 * callback does not exist, then a message gets echoed.
 	 *
-	 * This functions is the same as _sfc() except that if the intended function
+	 * This functions is the same as `_sfc()` except that if the intended function
 	 * does not exist, then a string is echoed (if provided).
 	 *
 	 * @param  string $callback       The function to call.
 	 * @param  string $msg_if_missing Optional. String to be echoed if $callback
 	 *                                does not exist. Default ''.
-	 * @return mixed                  If $callback exists as a function, returns
+	 * @return mixed                  If `$callback` exists as a function, returns
 	 *                                whatever that function returns. Otherwise,
 	 *                                returns nothing.
 	 */
