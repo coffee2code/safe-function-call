@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 6.3
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -137,6 +137,13 @@ Theses are the hooks provided by the plugin. They are intended for filter invoca
 
 == Changelog ==
 
+= 1.3.2 (2023-05-19) =
+* New: Add DEVELOPER-DOCS.md and move hooks documentation into it
+* New: Add TODO.md with potential TODO items
+* Change: Improve some inline documentation formatting
+* Change: Note compatibility through WP 6.3+
+* Change: Update copyright date (2023)
+
 = 1.3.1 (2021-09-26) =
 * Change: Note compatibility through WP 5.8+
 * Unit tests:
@@ -163,19 +170,13 @@ Details:
 * Change: Note compatibility through WP 5.7+
 * Change: Update copyright date (2021)
 
-= 1.2.11 (2020-09-09) =
-* Change: Restructure unit test file structure
-    * New: Create new subdirectory `phpunit/` to house all files related to unit testing
-    * Change: Move `bin/` to `phpunit/bin/`
-    * Change: Move `tests/bootstrap.php` to `phpunit/`
-    * Change: Move `tests/` to `phpunit/tests/`
-    * Change: Rename `phpunit.xml` to `phpunit.xml.dist` per best practices
-* Change: Note compatibility through WP 5.5+
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.3.2 =
+Trivial update: added DEVELOPER-DOCS.md, added TODO.md, improved some inline documentation, noted compatibility through WP 6.3+, and updated copyright date (2023)
 
 = 1.3.1 =
 Trivial update: noted compatibility through WP 5.8+ and minor reorganization and tweaks to unit tests
