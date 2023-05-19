@@ -8,13 +8,13 @@ The plugin provides four template tags for use in your theme templates, function
 
 ### Functions:
 
-* `<?php function _sfc( $callback ) ?>`
+* `<?php function _sfc( $callback, ...$params ) ?>`
 This will safely invoke the specified callback. You can specify an arbitrary number of additional arguments that will get passed to it. If the callback does not exist, nothing is displayed and no error is generated.
-* `<?php function _sfce( $callback ) ?>`
+* `<?php function _sfce( $callback, ...$params ) ?>`
 The same as `_sfc()` except that it echoes the return value of the callback before returning that value.
-* `<?php function _sfcf( $callback, $fallback_callback = '' ) ?>`
+* `<?php function _sfcf( $callback, $fallback_callback = '', ...$params ) ?>`
 The same as `_sfc()` except that it invokes the fallback callback (if it exists) if the callback does not exist.  `$function_name_if_missing()` is sent `$function_name` as its first argument, and then subsequently all arguments that would have otherwise been sent to `$function_name()`.
-* `<?php function _sfcm( $callback, $message_if_missing = '' ) ?>`
+* `<?php function _sfcm( $callback, $message_if_missing = '', ...$params ) ?>`
 The same as `_sfc()` except that it displays a message (the value of `$message_if_missing`), if the callback does not exist.
 
 ### Arguments:
@@ -28,37 +28,41 @@ A string representing the name of the function to be called, or an array of a cl
 * `$fallback_callback` _(string)_
 (For `_sfcf()` only.)  The function to be called if the callback does not exist.
 
+* `$params` _(mixed)_
+After their explicitly listed arguments, all functions accept any number of additional arguments, all of which will be passed to the callback as parameters.
+
 ### Examples:
 
-* `<?php _sfc('list_cities', 'Texas', 3); /* Assuming list_cities() is a valid function */ ?>`
-"Austin, Dallas, Fort Worth"
+* Calling `list_cities()`, a valid function:
+`<?php _sfc('list_cities', 'Texas', 3); ?>` => "Austin, Dallas, Fort Worth"
 
-* `<?php _sfc(array('Cities', 'list_cities'), 'Texas', 3); /* Assuming list_cities() is a valid function in the 'Cities' class */ ?>`
-"Austin, Dallas, Fort Worth"
+* Calling `list_cities()`, a valid method in the existing class `Cities`:
+`<?php _sfc(array('Cities', 'list_cities'), 'Texas', 3); ?>` => "Austin, Dallas, Fort Worth"
 
-* `<?php _sfc(array($obj, 'list_cities'), 'Texas', 3); /* Assuming list_cities() is a valid function in the object $obj */ ?>`
-"Austin, Dallas, Fort Worth"
+* Calling `list_cities()`, a valid method of the `$obj` object, which is also valid:
+`<?php _sfc(array($obj, 'list_cities'), 'Texas', 3); ?>` => "Austin, Dallas, Fort Worth"
 
-* `<?php _sfc('list_cities', 'Texas', 3); /* Assuming list_cities() is not a valid function */ ?>`
-""
+* Calling `list_cities()`, an invalid function:
+`<?php _sfc('list_cities', 'Texas', 3); ?>` => ""
 
-* `<?php _sfce('largest_city', 'Tx'); /* Assuming largest_city() is a valid function that does not echo/display its return value */ ?>`
-"Houston"
+* Calling `largest_city()`, a valid function that does not echo/display its return value:
+`<?php _sfce('largest_city', 'Tx'); ?>` => "Houston"
 
-* `<?php _sfcm('list_cities', 'Unable to list cities at the moment', 'Texas', 3); /* Assuming list_cities() is a valid function */ ?>`
-"Austin, Dallas, Fort Worth"
+* Calling `list_citites()`, a valid function, echoing a message if it doesn't exist:
+`<?php _sfcm('list_cities', 'Unable to list cities at the moment', 'Texas', 3); ?>` => "Austin, Dallas, Fort Worth"
 
-* `<?php _sfcm('list_cities', 'Unable to list cities at the moment', 'Texas', 3); /* Assuming list_cities() is not a valid function */ ?>`
-"Unable to list cities at the moment"
+* Calling `list_cities()`, an invalid function, echoing a message if it doesn't exist:
+`<?php _sfcm('list_cities', 'Unable to list cities at the moment', 'Texas', 3); ?>` => "Unable to list cities at the moment"
 
-* 
+* Calling `list_cities()`, a valid function, but invoking another callback if it wasn't valid:
+`<?php _sfcf('list_cities', 'unavailable_function_handler', 'Texas', 3); ?>` => "Austin, Dallas, Fort Worth"
+
+* Calling `list_cities()`, an invalid function, but invoking another callback if it wasn't valid:
+`<?php _sfcf('list_cities', 'unavailable_function_handler', 'Texas', 3); ?>` => "Sorry, but the function list_cities() does not exist."
 ```php
-<?php
 	function unavailable_function_handler( $callback ) {
 		echo "Sorry, but the function {$callback}() does not exist.";
 	}
-	_sfcf('nonexistent_function', 'unavailable_function_handler');
-	?>
 ```
 
 ## Hooks
@@ -136,8 +140,8 @@ The `_sfcm` hook allows you to use an alternative approach to safely invoke `_sf
 
 Instead of:
 
-`<?php _sfcm( 'list_cities', 'Texas', 'Unable to list cities at the moment', 3 ); ?>`
+`<?php _sfcm( 'list_cities', 'Unable to list cities at the moment', 'Texas', 3 ); ?>`
 
 Do:
 
-`<?php apply_filters( '_sfcm', 'list_cities', 'Texas', 'Unable to list cities at the moment', 3 ); ?>`
+`<?php apply_filters( '_sfcm', 'list_cities', 'Unable to list cities at the moment', 'Texas', 3 ); ?>`
