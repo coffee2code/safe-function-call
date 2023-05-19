@@ -5,7 +5,7 @@ Tags: function, template, plugin, error, coffee2code
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
-Tested up to: 5.8
+Tested up to: 6.3
 Stable tag: 1.3.1
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
