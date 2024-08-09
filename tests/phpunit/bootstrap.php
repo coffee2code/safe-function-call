@@ -5,7 +5,8 @@
  * @package Safe_Function_Call
  */
 
-define( 'SAFE_FUNCTION_CALL_PLUGIN_FILE', dirname( __FILE__, 3 ) . '/safe-function-call.php' );
+define( 'SAFE_FUNCTION_CALL_PLUGIN_DIR',  dirname( __FILE__, 3 ) );
+define( 'SAFE_FUNCTION_CALL_PLUGIN_FILE', SAFE_FUNCTION_CALL_PLUGIN_DIR . '/safe-function-call.php' );
 
 ini_set( 'display_errors', 'on' );
 error_reporting( E_ALL );
