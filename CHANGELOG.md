@@ -1,5 +1,8 @@
 # Changelog
 
+## _(in-progress)_
+* Change: Note compatibility through WP 6.6+
+
 ## 1.3.2 _(2023-05-19)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * New: Add TODO.md with potential TODO items
