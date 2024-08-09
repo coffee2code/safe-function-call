@@ -7,7 +7,7 @@
 * Unit tests:
     * Allow tests to run against current versions of WordPress
     * New: Add `composer.json` for PHPUnit Polyfill dependency
-    * Change: In bootstrap, store path to plugin file in a constant
+    * Change: In bootstrap, store path to plugin directory in a constant
 
 ## 1.3.2 _(2023-05-19)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
