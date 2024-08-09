@@ -3,6 +3,7 @@
 ## _(in-progress)_
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
+* New: Add `.gitignore` file
 
 ## 1.3.2 _(2023-05-19)_
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
