@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 6.6
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -137,6 +137,17 @@ Theses are the hooks provided by the plugin. They are intended for filter invoca
 
 == Changelog ==
 
+= 1.3.3 (2024-08-09) =
+* Change: Note compatibility through WP 6.6+
+* Change: Update copyright date (2024)
+* New: Add `.gitignore` file
+* Change: Remove development and testing-related files from release packaging
+* Unit tests:
+    * Hardening: Prevent direct web access to `bootstrap.php`
+    * Allow tests to run against current versions of WordPress
+    * New: Add `composer.json` for PHPUnit Polyfill dependency
+    * Change: In bootstrap, store path to plugin directory in a constant
+
 = 1.3.2 (2023-05-19) =
 * New: Add DEVELOPER-DOCS.md and move hooks documentation into it
 * New: Add TODO.md with potential TODO items
@@ -154,26 +165,13 @@ Theses are the hooks provided by the plugin. They are intended for filter invoca
     * Change: In bootstrap, store path to plugin file constant
     * Change: In bootstrap, add backcompat for PHPUnit pre-v6.0
 
-= 1.3 (2021-04-17) =
-Highlights:
-
-* This minor release adds support for a safer method of invoking the plugin's own functions in a way that safeguards your usage against errors if the plugin gets deactivated and also notes compatibility through WP 5.7+.
-
-Details:
-
-* New: Support filter invocation for all functions
-    * Add filter `_sfc` to support filter invocation method `_sfc()`
-    * Add filter `_sfce` to support filter invocation method `_sfce()`
-    * Add filter `_sfcf` to support filter invocation method `_sfcf()`
-    * Add filter `_sfcm` to support filter invocation method `_sfcm()`
-* Change: Fix incorrect function docblock description and remove repeated word in some parameter docblocks
-* Change: Note compatibility through WP 5.7+
-* Change: Update copyright date (2021)
-
 _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/safe-function-call/blob/master/CHANGELOG.md)._
 
 
 == Upgrade Notice ==
+
+= 1.3.3 =
+Trivial update: noted compatibility through WP 6.6+, removed unit tests from release packaging, and updated copyright date (2024)
 
 = 1.3.2 =
 Trivial update: added DEVELOPER-DOCS.md, added TODO.md, improved some inline documentation, noted compatibility through WP 6.3+, and updated copyright date (2023)
