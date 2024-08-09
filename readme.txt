@@ -113,7 +113,7 @@ However, if you make use indirect filter invocation, you can prevent errors. See
 
 = Does this plugin include unit tests? =
 
-Yes.
+Yes. The tests are not packaged in the release .zip file or included in plugins.svn.wordpress.org, but can be found in the [plugin's GitHub repository](https://github.com/coffee2code/safe-function-call/).
 
 
 == Developer Documentation ==
