@@ -19,11 +19,11 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 	//
 
 
-	 public function real_object_function( $arg1, $arg2 = '' ) {
+	public function real_object_function( $arg1, $arg2 = '' ) {
 		return "$arg2 + $arg1";
 	}
 
-	 public function fallback( $missing_callback, $arg1, $arg2 = '' ) {
+	public function fallback( $missing_callback, $arg1, $arg2 = '' ) {
 		return "$arg1 * $arg2";
 	}
 
