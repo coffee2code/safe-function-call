@@ -127,7 +127,7 @@ As an overview, these are the template tags provided by the plugin:
 * `_sfcf()` : Safely call a function; if it doesn't exist, then a fallback function (if specified) is called.
 * `_sfcm()` : Safely call a function; if it doesn't exist, then echo a message (if provided).
 
-Theses are the hooks provided by the plugin. They are intended for filter invocation usage rather than typical content filtering.
+These are the hooks provided by the plugin. They are intended for filter invocation usage rather than typical content filtering.
 
 * `_sfc`  : Filter to safely invoke `_sfc()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
 * `_sfce` : Filter to safely invoke `_sfce()` in such a way that if the plugin were deactivated or deleted, then your calls to the function won't cause errors in your site.
