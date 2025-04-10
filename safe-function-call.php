@@ -157,7 +157,8 @@ if ( ! function_exists( '_sfcm' ) ) :
 	 *
 	 * @param  string $callback       The function to call.
 	 * @param  string $msg_if_missing Optional. String to be echoed if $callback
-	 *                                does not exist. Default ''.
+	 *                                does not exist. Sanitized with `wp_kses_post()`
+	 *                                prior to output. Default ''.
 	 * @return mixed                  If `$callback` exists as a function, returns
 	 *                                whatever that function returns. Otherwise,
 	 *                                returns nothing.
@@ -165,7 +166,7 @@ if ( ! function_exists( '_sfcm' ) ) :
 	function _sfcm( $callback, $msg_if_missing = '' ) {
 		if ( ! __sfc_is_valid_callback( $callback ) ) {
 			if ( $msg_if_missing ) {
-				echo $msg_if_missing;
+				echo wp_kses_post( $msg_if_missing );
 			}
 			return;
 		}

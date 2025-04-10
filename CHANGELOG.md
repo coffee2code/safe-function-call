@@ -2,6 +2,7 @@
 
 ## _(in-progress)_
 * Hardening: Sanitize output of callback return value in `_sfce()`
+* Hardening: Sanitize output of `$msg_if_missing` argument value to `_sfcm()`
 * Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)
 

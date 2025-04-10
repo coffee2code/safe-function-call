@@ -23,7 +23,7 @@ The same as `_sfc()` except that it displays a message (the value of `$message_i
 A string representing the name of the function to be called, or an array of a class or object and its method (as can be done for `add_action()`/`add_filter()`)
 
 * `$message_if_missing` _(string)_
-(For `_sfcm()` only.)  The message to be displayed if `$function_name()` does not exist as a function.
+(For `_sfcm()` only.)  The message to be displayed if `$function_name()` does not exist as a function. Note that the message will be sanitized to only allow markup permitted by `wp_kses_post()`.
 
 * `$fallback_callback` _(string)_
 (For `_sfcf()` only.)  The function to be called if the callback does not exist.

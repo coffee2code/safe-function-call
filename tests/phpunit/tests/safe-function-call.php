@@ -157,6 +157,36 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 		$this->assertEquals( $msg, $out );
 	}
 
+	public function test__sfcm_on_nonexistent_function_with_message_containing_safe_markup() {
+		$msg = 'does not <strong>exist</strong>';
+
+		ob_start();
+		_sfcm( 'doesnt_exist', $msg, 4 );
+		$out = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( $msg, $out );
+
+		ob_start();
+		_sfcm( array( $this, 'fake_object_function' ), $msg );
+		$out = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( $msg, $out );
+	}
+
+	public function test__sfcm_on_nonexistent_function_with_message_containing_unsafe_markup() {
+		$msg = 'does not <strong>exist</strong><script>alert("boom");</script>';
+		$expected = 'does not <strong>exist</strong>alert("boom");';
+
+		ob_start();
+		_sfcm( 'doesnt_exist', $msg, 4 );
+		$out = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( $expected, $out );
+	}
+
 	public function test__sfcm_on_nonexistent_function_with_message_using_filter_invocation() {
 		$msg = 'does not exist';
 
