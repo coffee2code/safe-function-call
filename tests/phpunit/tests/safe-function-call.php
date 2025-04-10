@@ -6,6 +6,10 @@ function sfc_test_real_function( $arg1, $arg2 = '' ) {
 	return "$arg1 + $arg2";
 }
 
+function sfc_test_real_unsafe_function( $arg1, $arg2 = '' ) {
+	return "$arg1 - $arg2<script>alert('boom!');</script>";
+}
+
 function sfc_test_fallback( $missing_callback, $arg1, $arg2 = '' ) {
 	return "$arg1 / $arg2";
 }
@@ -75,6 +79,16 @@ class Safe_Function_Call_Test extends WP_UnitTestCase {
 		$this->assertEquals( "a + 5", $out );
 
 	}
+
+	public function test__sfce_on_existing_function_with_unsafe_return_value() {
+		ob_start();
+		_sfce( 'sfc_test_real_unsafe_function', 5, 'a' );
+		$out = ob_get_contents();
+		ob_end_clean();
+
+		$this->assertEquals( "5 - aalert('boom!');", $out );
+	}
+
 
 	public function test__sfce_on_existing_function_using_filter_invocation() {
 		ob_start();

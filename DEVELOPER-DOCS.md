@@ -11,7 +11,7 @@ The plugin provides four template tags for use in your theme templates, function
 * `<?php function _sfc( $callback, ...$params ) ?>`
 This will safely invoke the specified callback. You can specify an arbitrary number of additional arguments that will get passed to it. If the callback does not exist, nothing is displayed and no error is generated.
 * `<?php function _sfce( $callback, ...$params ) ?>`
-The same as `_sfc()` except that it echoes the return value of the callback before returning that value.
+The same as `_sfc()` except that it echoes the return value of the callback before returning that value. Note that the output of the callback will be sanitized to only allow markup permitted by `wp_kses_post()`.
 * `<?php function _sfcf( $callback, $fallback_callback = '', ...$params ) ?>`
 The same as `_sfc()` except that it invokes the fallback callback (if it exists) if the callback does not exist.  `$function_name_if_missing()` is sent `$function_name` as its first argument, and then subsequently all arguments that would have otherwise been sent to `$function_name()`.
 * `<?php function _sfcm( $callback, $message_if_missing = '', ...$params ) ?>`

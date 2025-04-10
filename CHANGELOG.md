@@ -1,6 +1,7 @@
 # Changelog
 
 ## _(in-progress)_
+* Hardening: Sanitize output of callback return value in `_sfce()`
 * Change: Note compatibility through WP 6.8+
 * Change: Update copyright date (2025)
 

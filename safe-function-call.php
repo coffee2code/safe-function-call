@@ -87,11 +87,13 @@ endif;
 if ( ! function_exists( '_sfce' ) ) :
 	/**
 	 * Safely invoke the function by the name of `$callback` and echo and return
-	 * the result. Any additional arguments will get passed to it. If the callback
-	 * does not exist, nothing is displayed and no error is generated.
+	 * the result. Any additional arguments will get passed to the callback. If
+	 * the callback does not exist, nothing is displayed and no error is generated.
+	 * The callback's return value will be sanitized to only allow
+	 * markup permitted by `wp_kses_post()` prior to being output.
 	 *
-	 * This function is the same as `_sfc()` except that it echoes the return value
-	 * of the callback before returning that value.
+	 * This function is the same as `_sfc()` except that it echoes the sanitized
+	 * return value of the callback before returning the unsanitized return value.
 	 *
 	 * @param  string $callback The function to call.
 	 * @return mixed            If `$callback` exists as a function, returns whatever
@@ -102,7 +104,7 @@ if ( ! function_exists( '_sfce' ) ) :
 			$args  = func_get_args();
 			$value = call_user_func_array( '_sfc', $args );
 			if ( $value ) {
-				echo $value;
+				echo wp_kses_post( $value );
 			}
 
 			return $value;
