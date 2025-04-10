@@ -123,7 +123,7 @@ Developer documentation can be found in [DEVELOPER-DOCS.md](https://github.com/c
 As an overview, these are the template tags provided by the plugin:
 
 * `_sfc()`  : Safely call a function and get its return value.
-* `_sfce()` : Safely call a function and echo its return value.
+* `_sfce()` : Safely call a function and echo its sanitized return value.
 * `_sfcf()` : Safely call a function; if it doesn't exist, then a fallback function (if specified) is called.
 * `_sfcm()` : Safely call a function; if it doesn't exist, then echo a message (if provided).
 
