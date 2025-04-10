@@ -1,6 +1,13 @@
 # Changelog
 
-## _(in-progress)_
+## 1.4 _(2025-04-09)_
+
+### Highlights:
+
+This minor release sanitizes the output of the callback return value in `_sfce()` and the `$msg_if_missing` argument value to `_sfce()`, notes compatibility through WP 6.8+ and PHP 8.3+, and updates copyright date (2025).
+
+### Details:
+
 * Hardening: Sanitize output of callback return value in `_sfce()`
 * Hardening: Sanitize output of `$msg_if_missing` argument value to `_sfcm()`
 * Change: Note compatibility through WP 6.8+

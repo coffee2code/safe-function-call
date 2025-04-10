@@ -6,7 +6,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 1.5
 Tested up to: 6.8
-Stable tag: 1.3.3
+Stable tag: 1.4
 
 Safely and easily call functions that may not be available (such as those provided by a plugin that gets deactivated)
 
@@ -137,6 +137,19 @@ These are the hooks provided by the plugin. They are intended for filter invocat
 
 == Changelog ==
 
+= 1.4 (2025-04-09) =
+Highlights:
+
+This minor release sanitizes the output of the callback return value in `_sfce()` and the `$msg_if_missing` argument value to `_sfce()`, notes compatibility through WP 6.8+ and PHP 8.3+, and updates copyright date (2025).
+
+Details:
+
+* Hardening: Sanitize output of callback return value in `_sfce()`
+* Hardening: Sanitize output of `$msg_if_missing` argument value to `_sfcm()`
+* Change: Note compatibility through WP 6.8+
+* Change: Note compatibility through PHP 8.3+
+* Change: Update copyright date (2025)
+
 = 1.3.3 (2024-08-09) =
 * Change: Note compatibility through WP 6.6+
 * Change: Update copyright date (2024)
@@ -169,6 +182,9 @@ _Full changelog is available in [CHANGELOG.md](https://github.com/coffee2code/sa
 
 
 == Upgrade Notice ==
+
+= 1.4 =
+Minor update: sanitized the output of the callback return value in `_sfce()` and the `$msg_if_missing` argument value to `_sfce()`, noted compatibility through WP 6.8+ and PHP 8.3+, and updated copyright date (2025).
 
 = 1.3.3 =
 Trivial update: noted compatibility through WP 6.6+, removed unit tests from release packaging, and updated copyright date (2024)
